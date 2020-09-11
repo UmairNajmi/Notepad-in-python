@@ -1,0 +1,78 @@
+from tkinter import *
+
+def newFile():
+    pass
+
+def openFile():
+    pass
+
+def saveFile():
+    pass
+
+def quitApp():
+    pass
+
+def cut():
+    pass
+
+def copy():
+    pass
+
+def paste():
+    pass
+
+def about():
+    pass
+
+
+if __name__ == '__main__':
+    #Basic tkinter setup
+    root = Tk()
+    root.title("Untitled - Notepad")
+    root.wm_iconbitmap("umn.ico")
+    root.geometry("644x788")
+    #Add TextArea
+    textArea = Text(root, font="lucida 13")
+    file = None
+    #Let create a menuber
+    MenuBar = Menu(root)
+    #File Menu Starts
+    FileMenu = Menu(MenuBar, tearoff=0)
+    #To open new file
+    FileMenu.add_command(label="New", command=newFile)
+    #To open the file already existing file
+    FileMenu.add_command(label="open", command = openFile)
+    #To save the curret file
+    FileMenu.add_command(label = "Save", command = saveFile)
+    FileMenu.add_separator()
+    FileMenu.add_command(label = "Exit", command = quitApp)
+    MenuBar.add_cascade(label = "File", menu=FileMenu)
+    #File Menu Starts
+
+    # Edit Menu Starts
+    EditMenu = Menu(MenuBar, tearoff=0)
+    # To give a feature of cut, copy, paste
+    EditMenu.add_command(label = "Cut", command=cut)
+    EditMenu.add_command(label= "Copy", command=copy)
+    EditMenu.add_command(label = "Paste", command=paste)
+
+    EditMenu.add_cascade(label="Edit", menu = EditMenu)
+    #Edit menu End
+
+    # Help menu Ends
+    HelpMenu = Menu(MenuBar, tearoff=0)
+    HelpMenu.add_command(label = "About Notepad")
+    # Edit menu Ends
+
+
+
+
+    root.config(menu=MenuBar)
+
+
+
+
+    root.mainloop()
+
+
+
